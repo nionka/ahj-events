@@ -4,11 +4,12 @@ export default class GamePlay {
     this.container = null;
     this.cells = [];
     this.activeGoblin = null;
+    this.timerId = null;
   }
 
   init() {
     this.drawBoard();
-    // this.addGoblinRandom();
+    this.showGoblin();
   }
 
   bindToDom(container) {
@@ -26,6 +27,13 @@ export default class GamePlay {
       this.container.innerHTML += cell;
     }
     this.cells = Array.from(this.container.children);
+  }
+
+  showGoblin() {
+    this.timerId = setInterval(() => {
+      this.addGoblinRandom();
+    },
+    1000);
   }
 
   deleteGoblin(index) {
@@ -48,5 +56,9 @@ export default class GamePlay {
 
     this.activeGoblin = this.checkRandom();
     this.cells[this.activeGoblin].classList.add('goblin');
+  }
+
+  static showMessage(message) {
+    alert(message);
   }
 }

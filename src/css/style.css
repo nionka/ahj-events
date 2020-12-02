@@ -1,19 +1,23 @@
 body {
     width: 100%;
     background-color: gray;
+    text-align: center;
+    margin: 0;
 }
 
 #game-container {
     width: 50%;
     display: flex;
     flex-wrap: wrap;
-    margin: auto; 
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .cell {
     padding: 10%;
     border: 1px solid #000000;
     background-color: pink;
+    cursor: url("../img/cursor.png"), auto;
 }
 
 .goblin {
@@ -21,4 +25,9 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+}
+
+.pointers {
+    font-size: 20px;
+    padding: 20px;   
 }
